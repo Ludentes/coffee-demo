@@ -1,0 +1,21 @@
+{
+  "name": "telegram-coffee-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "ts-node src/bot.ts",
+    "build": "tsc",
+    "start": "node dist/bot.js",
+    "test": "node -e \"console.log('Run manual tests with sample-messages.json')\""
+  },
+  "dependencies": {
+    "@types/express": "^5.0.3",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.9",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}

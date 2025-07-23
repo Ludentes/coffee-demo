@@ -1,0 +1,64 @@
+{
+  "testCases": [
+    {
+      "name": "Simple Order",
+      "input": "1 large cappuccino with oat milk",
+      "expectedItems": 1,
+      "expectedTotal": 4.34,
+      "description": "Basic order with size and milk modification"
+    },
+    {
+      "name": "Multiple Items", 
+      "input": "2 medium lattes, 1 small cappuccino",
+      "expectedItems": 2,
+      "expectedTotal": 7.32,
+      "description": "Multiple items with different quantities and sizes"
+    },
+    {
+      "name": "Fuzzy Matching",
+      "input": "1 large cap with oat milk", 
+      "expectedItems": 1,
+      "expectedTotal": 4.34,
+      "description": "Abbreviated item name should match Cappuccino"
+    },
+    {
+      "name": "Default Values",
+      "input": "1 cappuccino",
+      "expectedItems": 1,
+      "expectedTotal": 3.80,
+      "description": "Should use medium size and whole milk defaults"
+    },
+    {
+      "name": "Invalid Item",
+      "input": "1 espresso",
+      "expectError": true,
+      "errorType": "MenuItemNotFound",
+      "description": "Should return helpful error with menu options"
+    },
+    {
+      "name": "Parsing Error",
+      "input": "blah blah blah",
+      "expectError": true, 
+      "errorType": "ParseError",
+      "description": "Should return formatting help and examples"
+    }
+  ],
+  "expectedResponses": {
+    "orderConfirmation": {
+      "format": "HTML",
+      "requiredElements": [
+        "✅ Order Confirmed!",
+        "📋 Your Order:",
+        "💰 Order Summary:",
+        "⏰ Ready by:",
+        "📍 Show this message",
+        "🆔 Order #:"
+      ]
+    },
+    "errorMessages": {
+      "menuItemNotFound": "❌ Sorry, I couldn't find",
+      "parseError": "🤔 I didn't understand your order",
+      "helpText": "Type /menu to see all available options"
+    }
+  }
+}

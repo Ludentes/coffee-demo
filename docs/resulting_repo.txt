@@ -1,0 +1,38 @@
+.
+├── deploy.sh
+├── dist
+│   ├── bot.d.ts
+│   ├── bot.js
+│   ├── bot.js.map
+│   ├── types.d.ts
+│   ├── types.js
+│   └── types.js.map
+├── docs
+│   ├── botfather-commands.md
+│   ├── botfather-setup.md
+│   ├── command-handling-fix.md
+│   ├── data-model.md
+│   ├── deployment.md
+│   ├── developer-guidelines.md
+│   ├── implementation-progress.md
+│   ├── implementatio-tasks.md
+│   ├── main-docs.md
+│   ├── repo-structure.md
+│   ├── resulting_repo.txt
+│   ├── service-implementation-explanation.md
+│   ├── testing-guide.md
+│   ├── timezone-handling.md
+│   ├── user-scenarios.md
+│   └── webhook-setup.md
+├── package.json
+├── package-lock.json
+├── README.md
+├── src
+│   ├── bot.ts
+│   ├── services
+│   └── types.ts
+├── test
+│   └── sample-messages.json
+└── tsconfig.json
+
+6 directories, 30 files
