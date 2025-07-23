@@ -32,7 +32,7 @@ NODE_ENV=production
 
 # Server Configuration
 PORT=3000
-WEBHOOK_DOMAIN=https://tuba.ludentes.ru
+WEBHOOK_DOMAIN=https://you-domain
 WEBHOOK_PATH=/webhook/telegram
 
 # Logging Configuration
@@ -41,7 +41,7 @@ LOG_LEVEL=info
 
 Replace:
 - `your_bot_token_here` with your actual bot token
-- `https://tuba.ludentes.ru` with your server's domain name
+- `https://you-domain` with your server's domain name
 - `/webhook/telegram` with your preferred webhook path
 
 ## Step 2: Deploy Your Bot to the Server
@@ -93,7 +93,7 @@ You should see a response like:
 {
   "ok": true,
   "result": {
-    "url": "https://tuba.ludentes.ru/webhook/telegram",
+    "url": "https://you-domain/webhook/telegram",
     "has_custom_certificate": false,
     "pending_update_count": 0,
     "max_connections": 40,
@@ -138,7 +138,7 @@ When using webhooks, you need a web server to handle incoming webhook requests f
 You might notice something interesting in your logs:
 
 ```
-telegram-coffee-bot[636877]: [INFO] Bot started with webhook: https://tuba.ludentes.ru/webhook/telegram
+telegram-coffee-bot[636877]: [INFO] Bot started with webhook: https://you-domain/webhook/telegram
 telegram-coffee-bot[636877]: [INFO] Bot webhook server started on port 3000
 ```
 
@@ -158,8 +158,8 @@ Our systemd service is now configured as a standard service (not oneshot) since 
 [Service]
 Type=simple
 User=ubuntu
-WorkingDirectory=/var/www/tuba.ludentes.ru/html/bot
-ExecStart=/bin/bash /var/www/tuba.ludentes.ru/html/bot/start.sh
+WorkingDirectory=/var/www/you-domain/html/bot
+ExecStart=/bin/bash /var/www/you-domain/html/bot/start.sh
 Restart=on-failure
 RestartSec=10
 ```
@@ -243,7 +243,7 @@ This code:
 For advanced webhook configuration, you can use the Telegram API directly:
 
 ```
-https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=https://tuba.ludentes.ru/webhook/telegram&max_connections=40&drop_pending_updates=true
+https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=https://you-domain/webhook/telegram&max_connections=40&drop_pending_updates=true
 ```
 
 Parameters:
